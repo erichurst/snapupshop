@@ -6,6 +6,18 @@
 
 # Ignore bundler config.
 /.bundle
+/.env
+/.powenv
+/.powrc
+/.rbenv-vars
+/.yardoc
+/.ruby-version
+/config/database.yml
+/coverage
+doc/
+/doc/*.svg
+/doc/*.yml
+/db/*.sqlite3
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -14,3 +26,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/vendor/bundle/
+/public/system/*
+*.DS_Store

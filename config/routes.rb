@@ -1,12 +1,15 @@
 Snapup::Application.routes.draw do
-  get "sessions/new"
-  get "sessions/create"
-  get "sessions/destroy"
+
+
+  #*** SESSIONS ***#
+  get "oauth/callback", to: "sessions#create", as: :oauth_callback
+  get "logout", to: "sessions#destroy", as: :logout
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root to: 'welcome#index'
+  root to: "home#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -6,4 +6,5 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    = link_to "Sign in With Instagram", Instagram.authorize_url(redirect_uri: oauth_callback_url)
     = yield

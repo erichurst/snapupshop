@@ -3,7 +3,7 @@ Snapup::Application.routes.draw do
 
   #*** SESSIONS ***#
   get "oauth/callback", to: "sessions#create", as: :oauth_callback
-  get "logout", to: "sessions#destroy", as: :logout
+  get "logout", to: "sessions#destroy", as: :log_out
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

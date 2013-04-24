@@ -1,6 +1,8 @@
 Snapup::Application.routes.draw do
 
 
+  resources :users
+
   #*** SESSIONS ***#
   get "oauth/callback", to: "sessions#create", as: :oauth_callback
   get "logout", to: "sessions#destroy", as: :log_out

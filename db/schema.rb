@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 20130424221610) do
     t.string   "email"
     t.text     "api_token"
     t.string   "access_token"
+    t.string   "instagram_id"
+    t.string   "instagram_full_name"
+    t.string   "instagram_profile_picture"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

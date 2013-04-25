@@ -19,7 +19,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "an api_token is created" do
-    user = User.create!(instagram_username: 'eh')
+    user = create(:user)
     refute_nil user.api_token
   end
 end

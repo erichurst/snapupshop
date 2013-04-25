@@ -4,6 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :instagram_username
       t.string :email
       t.text   :api_token
+      t.string :access_token
 
       t.timestamps
     end

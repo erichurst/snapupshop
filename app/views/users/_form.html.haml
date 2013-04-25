@@ -5,10 +5,6 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :instagram_username
-    = f.text_field :instagram_username
   .field
     = f.label :email
     = f.text_field :email

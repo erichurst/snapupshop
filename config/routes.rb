@@ -1,7 +1,7 @@
 Snapup::Application.routes.draw do
 
 
-  resources :users
+  resources :users, except: [:new, :create]
 
   #*** SESSIONS ***#
   get "oauth/callback", to: "sessions#create", as: :oauth_callback

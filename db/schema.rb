@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20130424221610) do
   create_table "users", force: true do |t|
     t.string   "instagram_username"
     t.string   "email"
+    t.text     "api_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

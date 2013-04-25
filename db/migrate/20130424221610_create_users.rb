@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     create_table :users do |t|
       t.string :instagram_username
       t.string :email
+      t.text   :api_token
 
       t.timestamps
     end

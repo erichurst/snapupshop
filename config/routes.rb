@@ -1,6 +1,7 @@
 Snapup::Application.routes.draw do
 
 
+  get "/home", to: "users#home", as: :user_home
   resources :users, except: [:new, :create]
 
   #*** SESSIONS ***#

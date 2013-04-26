@@ -1,9 +1,2 @@
 %h1 Snap Up Shop
 %h2 get some...
-
-- if @user
-  %h4= @user.username
-  - @client.user_recent_media.each do |item|
-    = image_tag item.images.thumbnail.url
-- else
-  %h4 #snapup

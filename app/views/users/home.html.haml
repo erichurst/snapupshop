@@ -1,0 +1,7 @@
+%h2== #{current_user.instagram_username}'s Snap Up Shop
+
+%div= image_tag current_user.instagram_profile_picture, alt: current_user.instagram_username
+
+%div
+  - instagram_client.user_recent_media.each do |item|
+    = image_tag item.images.thumbnail.url

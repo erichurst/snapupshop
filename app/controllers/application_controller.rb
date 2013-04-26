@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def verify_authentication!
+    redirect_to root_path, alert: "Whoa there, Bub. Please sign in." unless current_user
+  end
+
   def instagram_client
     @instagram_client ||= Instagram.client(:access_token => current_user.access_token) if current_user
   end

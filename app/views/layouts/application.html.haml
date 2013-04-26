@@ -20,10 +20,10 @@
               %ul.nav
                 %li= link_to "Home", user_home_path
                 %li= link_to "Storefront", current_user
-          %ul.nav.pull-right
-            - unless current_user
-              %li= link_to "Sign in With Instagram", Instagram.authorize_url(redirect_uri: oauth_callback_url)
-            - else
-              %li= link_to "Log Out", log_out_path
+            %ul.nav.pull-right
+              - unless current_user
+                %li= link_to "Sign in With Instagram", Instagram.authorize_url(redirect_uri: oauth_callback_url)
+              - else
+                %li= link_to "Log Out", log_out_path
     .container
       = yield

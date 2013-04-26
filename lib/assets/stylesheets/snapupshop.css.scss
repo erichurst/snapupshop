@@ -1,5 +1,18 @@
 body {
-  padding-top: 60px;
   background: #EFEFEF;
   color: #333;
+}
+
+/**** DESKTOP ****/
+
+@media (min-width: 980px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+
+/**** PHONES ****/
+
+@media (max-width: 480px) {
 }

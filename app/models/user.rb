@@ -11,7 +11,9 @@
 class User < ActiveRecord::Base
   before_create :generate_api_token
 
-  def self.create_from_instagram_response(response)
+  validates :instagram_id, uniqueness: true
+
+  def self.find_or_create_from_instagram_response(response)
     User.where(instagram_id: response.user.id).first_or_create!({
       instagram_username:             response.user.username,
       instagram_full_name:            response.user.full_name,

@@ -28,4 +28,11 @@ ActiveRecord::Schema.define(version: 20130424221610) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["access_token"], name: "index_users_on_access_token"
+  add_index "users", ["api_token"], name: "index_users_on_api_token"
+  add_index "users", ["email"], name: "index_users_on_email"
+  add_index "users", ["instagram_full_name"], name: "index_users_on_instagram_full_name"
+  add_index "users", ["instagram_id"], name: "index_users_on_instagram_id"
+  add_index "users", ["instagram_username"], name: "index_users_on_instagram_username"
+
 end

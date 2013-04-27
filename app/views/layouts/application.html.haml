@@ -2,9 +2,12 @@
 %html{lang: 'en'}
   %head
     %title Snapup
-    %meta{ name: 'viewport',  content: 'width=device-width, initial-scale=1.0' }
+    %meta{ name: 'viewport',  content: 'initial-scale=1.0' }
+    %meta{ name: "apple-mobile-web-app-capable", content: "yes" }
+    %meta{ name: "apple-mobile-web-app-status-bar-style", content: "#f1f1f1" }
+    %meta{ name: "apple-mobile-web-app-title", content: "SnapUp Shop" }
     = stylesheet_link_tag    "application", media: "all"
-    %link{ href: 'http://fonts.googleapis.com/css?family=Lobster|Josefin+Slab:300,400' rel: 'stylesheet' type: 'text/css' }
+    %link{ href: 'http://fonts.googleapis.com/css?family=Lobster|Josefin+Slab:300,400', rel: 'stylesheet', type: 'text/css' }
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
@@ -15,7 +18,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to "Snap Up Shop", root_path, class: "brand"
+          = link_to "SnapUp Shop", root_path, class: "brand"
           .nav-collapse.collapse
             - if current_user
               %ul.nav
@@ -28,3 +31,7 @@
                 %li= link_to "Log Out", log_out_path
     .container
       = yield
+
+  /hide address bar on mobile
+  :javascript
+    setTimeout( function(){ window.scrollTo(0, 0.1) }, 5 );

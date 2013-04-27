@@ -1,13 +1,25 @@
-body {
-  background: #EFEFEF;
-  color: #333;
+.navbar {
+  .nav>li>a, .brand {
+    text-shadow: none;
+  }
+
+  .brand {
+    font-weight: normal;
+    font-family: 'Lobster';
+    color: #00b5b5;
+  }
+}
+
+.navbar-inner {
+  background-color: #f2f2f2;
+  background-image: linear-gradient(to bottom, #f1f1f1, #f2f2f2);
 }
 
 /**** DESKTOP ****/
 
 @media (min-width: 980px) {
   body {
-    padding-top: 60px;
+    padding-top: 54px;
   }
 }
 
@@ -15,4 +27,15 @@ body {
 /**** PHONES ****/
 
 @media (max-width: 480px) {
+  .nav-collapse {
+    .nav>li>a {
+      font-weight: normal;
+    }
+  }
+
+  .navbar-inner {
+    background-color: #f2f2f2;
+    background-image: linear-gradient(to bottom, #f1f1f1, #f2f2f2);
+    background-image: -webkit-linear-gradient(top, #f1f1f1, #f2f2f2);
+  }
 }

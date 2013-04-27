@@ -29,3 +29,7 @@ doc/
 /vendor/bundle/
 /public/system/*
 *.DS_Store
+
+# Ignore Bootstrap Source Files
+*.zip
+/snapup-customized-bootstrap/

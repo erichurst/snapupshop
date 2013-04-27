@@ -1,7 +1,15 @@
-%h1== @#{current_user.instagram_username}
+.media
+  = link_to '#', class: 'pull-left' do
+    = image_tag current_user.instagram_profile_picture,
+      alt: current_user.instagram_username,
+      class: 'media-object img-polaroid profile'
+  .media-body
+    %h4.media-heading== @#{current_user.instagram_username}
+    %p This is some bio copy that needs to be pulled from Instagram and stored in the database.
 
-%div= image_tag current_user.instagram_profile_picture, alt: current_user.instagram_username
-
-%div
+%ul.thumbnails
   - instagram_client.user_recent_media.each do |item|
-    = image_tag item.images.thumbnail.url
+    %li.span3
+      .thumbnail
+        = image_tag item.images.low_resolution.url, alt: item.user.username
+        %p= item.caption.text

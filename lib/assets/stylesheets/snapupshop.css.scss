@@ -1,3 +1,7 @@
+body {
+  background-color: #f2f2f2;
+}
+
 .navbar {
   .nav>li>a, .brand {
     text-shadow: none;
@@ -8,11 +12,36 @@
     font-family: 'Lobster';
     color: #00b5b5;
   }
+
+  .btn-navbar {
+    background: none;
+    border: none;
+  }
 }
 
 .navbar-inner {
-  background-color: #f2f2f2;
-  background-image: linear-gradient(to bottom, #f1f1f1, #f2f2f2);
+  background-color: #fff;
+  background-image: none;
+}
+
+.profile {
+  max-width: 75px;
+}
+
+.media {
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  border-radius: 0px;
+  background: #fff;
+  
+  p {
+    max-width: 306px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+  }
 }
 
 /**** DESKTOP ****/
@@ -20,6 +49,44 @@
 @media (min-width: 980px) {
   body {
     padding-top: 54px;
+  }
+
+  .thumbnails {
+    -moz-column-count: 4;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0;
+    column-count: 4;
+    column-gap: 0;
+    column-fill: auto;
+  }
+
+  .thumbnail {
+    -moz-column-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    column-break-inside: avoid;
+    display: inline-block;
+  }
+}
+
+/**** PORTRAIT TABLET TO LANDSCAPE AND DESKTOP ***/
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .thumbnails {
+    -moz-column-count: 4;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0;
+    column-count: 4;
+    column-gap: 0;
+    column-fill: auto;
+  }
+
+  .thumbnail {
+    -moz-column-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    column-break-inside: avoid;
+    display: inline-block;
   }
 }
 
@@ -33,9 +100,9 @@
     }
   }
 
-  .navbar-inner {
-    background-color: #f2f2f2;
-    background-image: linear-gradient(to bottom, #f1f1f1, #f2f2f2);
-    background-image: -webkit-linear-gradient(top, #f1f1f1, #f2f2f2);
-  }
+  // .navbar-inner {
+  //   background-color: #f2f2f2;
+  //   background-image: linear-gradient(to bottom, #f1f1f1, #f2f2f2);
+  //   background-image: -webkit-linear-gradient(top, #f1f1f1, #f2f2f2);
+  // }
 }

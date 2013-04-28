@@ -1,12 +1,15 @@
-%p#notice= notice
+.media
+  = link_to '#', class: 'pull-left' do
+    = image_tag @user.instagram_profile_picture,
+      alt: @user.instagram_username,
+      class: 'media-object img-polaroid profile'
+  .media-body
+    %h4.media-heading== @#{@user.instagram_username}
+    %p This is some bio copy that needs to be pulled from Instagram and stored in the database.
 
-%p
-  %b Instagram username:
-  = @user.instagram_username
-%p
-  %b Email:
-  = @user.email
-
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+%ul.thumbnails
+  - @user_client.user_recent_media.each do |item|
+    %li.span3
+      .thumbnail
+        = image_tag item.images.low_resolution.url, alt: item.user.username
+        %p= item.caption.text

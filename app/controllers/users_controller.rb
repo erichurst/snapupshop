@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.where(instagram_username: params[:instagram_username]).first
+    @user_client = Instagram.client(access_token: @user.access_token)
   end
 
   def edit

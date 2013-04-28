@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def instagram_client
-    @instagram_client ||= Instagram.client(:access_token => current_user.access_token) if current_user
+    @instagram_client ||= Instagram.client(access_token: current_user.access_token) if current_user
   end
   helper_method :instagram_client
 end

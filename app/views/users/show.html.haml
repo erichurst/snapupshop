@@ -9,9 +9,9 @@
 
 %h3 Up For Grabs!
 %ul.thumbnails
-  - @user_client.tag_recent_media("kidsclothesforsale", 
-    user: @user.instagram_username,
-    count: 4).each do |item|
+  - @user.client.user_recent_media(count: 60).each do |item|
+    -#TODO: filter items by hashtag
+    -# - if item.tags.include?("kidsclothesforsale")
     %li.span3
       .thumbnail
         = image_tag item.images.low_resolution.url, alt: item.user.username

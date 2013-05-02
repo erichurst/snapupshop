@@ -22,6 +22,10 @@ class User < ActiveRecord::Base
     })
   end
 
+  def client
+    Instagram.client(access_token: access_token)
+  end
+
   protected
   def generate_api_token
     self.api_token = Base64.urlsafe_encode64(SecureRandom.urlsafe_base64(128) + "#{Time.now.to_f*1000}")

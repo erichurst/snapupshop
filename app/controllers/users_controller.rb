@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(instagram_username: params[:instagram_username]).first
-    @user_client = Instagram.client(access_token: @user.access_token)
+    @user = User.where(instagram_username: params[:instagram_username]).first!
+  rescue ActiveRecord::RecordNotFound => error
+    redirect_to root_path, alert: "Woops! There isn't anyone using SnapUp Shop by that name."
   end
 
   def edit

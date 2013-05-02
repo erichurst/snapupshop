@@ -7,8 +7,11 @@
     %h4.media-heading== @#{@user.instagram_username}
     %p This is some bio copy that needs to be pulled from Instagram and stored in the database.
 
+%h3 Up For Grabs!
 %ul.thumbnails
-  - @user_client.user_recent_media.each do |item|
+  - @user_client.tag_recent_media("kidsclothesforsale", 
+    user: @user.instagram_username,
+    count: 4).each do |item|
     %li.span3
       .thumbnail
         = image_tag item.images.low_resolution.url, alt: item.user.username

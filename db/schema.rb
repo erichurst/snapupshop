@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130424221610) do
+ActiveRecord::Schema.define(version: 20130504184450) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reviews", force: true do |t|
+    t.string   "instagram_image_id"
+    t.integer  "user_id"
+    t.string   "body"
+    t.string   "author"
+    t.string   "token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["instagram_image_id"], name: "index_reviews_on_instagram_image_id", using: :btree
+  add_index "reviews", ["token"], name: "index_reviews_on_token", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "instagram_username"
@@ -28,11 +41,11 @@ ActiveRecord::Schema.define(version: 20130424221610) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["access_token"], name: "index_users_on_access_token"
-  add_index "users", ["api_token"], name: "index_users_on_api_token"
-  add_index "users", ["email"], name: "index_users_on_email"
-  add_index "users", ["instagram_full_name"], name: "index_users_on_instagram_full_name"
-  add_index "users", ["instagram_id"], name: "index_users_on_instagram_id"
-  add_index "users", ["instagram_username"], name: "index_users_on_instagram_username"
+  add_index "users", ["access_token"], name: "index_users_on_access_token", using: :btree
+  add_index "users", ["api_token"], name: "index_users_on_api_token", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["instagram_full_name"], name: "index_users_on_instagram_full_name", using: :btree
+  add_index "users", ["instagram_id"], name: "index_users_on_instagram_id", using: :btree
+  add_index "users", ["instagram_username"], name: "index_users_on_instagram_username", using: :btree
 
 end
